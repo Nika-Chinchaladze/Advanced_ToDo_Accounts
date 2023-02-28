@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% block title %} {% endblock %}
+    <!-- Bootstrap Link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <!-- External CSS Link -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    {% block css_styles %} {% endblock %}
+</head>
+  <body>
+    <!-- NAVIGATION BAR -->
+    <nav class="d-flex justify-content-between align-items-center">
+        <div class="first">
+            <h3>Advanced To-Do</h3>
+        </div>
+        <div class="second">
+            {% if logged_in %}
+                <a class="me-3 navLink" href="{{ url_for('personal_page') }}">Home</a>
+                <a class="ms-3 navLink" href="{{ url_for('logout_page') }}">Logout</a>
+            {% else %}
+                <a class="me-3 navLink" href="{{ url_for('register_page') }}">Register</a>
+                <a class="ms-1 me-1 navLink" href="{{ url_for('login_page') }}">Login</a>
+            {% endif %}
+        </div>
+    </nav>
+
+    {% block content %} {% endblock %}
+
+    <!-- Bootstrap Link -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    {% block logic %} {% endblock %}
+</body>
+</html>

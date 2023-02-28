@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}
+    <title>Action Page</title>
+{% endblock %}
+
+{% block css_styles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/action.css') }}">
+{% endblock %}
+
+{% block content %}
+    <div class="actionDiv">
+        <form method="post" class="d-flex flex-column justify-content-center align-items-center">
+            <input type="text" id="task" name="task" value="{{ chosen_task.task_name }}" required>
+            <input type="hidden" id="hidden_task_id" name="hidden_task_id" value="{{ chosen_task.id }}">
+            <div class="d-flex justify-content-center align-items-center">
+                <a class="deleteLink" href="{{ url_for('delete_task_page', task_id=chosen_task.id) }}">Delete</a>
+                <button type="submit">Save</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}

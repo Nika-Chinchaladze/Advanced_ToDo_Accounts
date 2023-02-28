@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}
+    <title>Login Page</title>
+{% endblock %}
+
+{% block css_styles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+{% endblock %}
+
+{% block content %}
+
+    <div class="registerDiv">
+
+        <!-- IF AUTHENTICATION FAILED -->
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <p class="flashMessage">
+                        {{ message }}
+                    </p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        <h2 class="text-center mb-2 mt-1">Register Form</h2>
+        <form method="post" enctype="multipart/form-data" class="d-flex flex-column justify-content-center align-items-center w-100 myForm">
+            <input type="text" id="first_name" name="first_name" placeholder="Enter First Name" required>
+            <input type="text" id="last_name" name="last_name" placeholder="Enter Last Name" required>
+            <input type="email" id="email" name="email" placeholder="Enter Email" required>
+            <input type="password" id="password" name="password" placeholder="Enter Password" required>
+            <input type="file" id="img" name="img" accept="image/png, image/jpg, image/jpeg" required>
+            <button type="submit">Submit</button>
+        </form>
+        <a href="{{ url_for('login_page') }}"><h5 class="text-center">Login Here</h5></a>
+    </div>
+
+{% endblock %}
