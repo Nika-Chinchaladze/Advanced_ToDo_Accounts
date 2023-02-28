@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+  <title>Action Page</title>
+{% endblock %}
+
+{% block css_styles %}
+  <link rel="stylesheet" href="{% static 'advanced_to_do/css/action.css' %}">
+{% endblock %}
+    
+{% block content %}
+    <!-- MAIN SECTION -->
+    <div class="actionDiv">
+        <form method="post" class="d-flex flex-column justify-content-center align-items-center">
+          {% csrf_token %}
+            <input type="text" id="name_task" name="name_task" value="{{ task.task_name }}">
+            <input type="hidden" id="id_task" name="id_task" value="{{ task.id }}">
+            <div class="d-flex justify-content-center align-items-center">
+                <a class="deleteButton" href="{% url 'delete-task' task_id=task.id %}">Delete</a>
+                <button class="saveButton" type="submit">Save</button>
+            </div>
+        </form>
+    </div>  
+{% endblock %}

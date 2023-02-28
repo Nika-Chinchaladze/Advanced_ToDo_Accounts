@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+  <title>Register Page</title>
+{% endblock %}
+
+{% block css_styles %}
+  <link rel="stylesheet" href="{% static 'advanced_to_do/css/login.css' %}">
+{% endblock %}
+    
+{% block content %}
+    <div class="registerDiv">
+        <h2 class="text-center mb-3 mt-2">Register Form</h2>
+        <!-- IF AUTHENTICATION FAILED -->
+        {% if messages %}
+            {% for message in messages %}
+              <p class="text-center fw-bold text-warning">{{ message }}</p>
+            {% endfor %}
+        {% endif %}
+
+        <!-- FORM -->
+        <form method="post" enctype="multipart/form-data" class="d-flex flex-column justify-content-center align-items-center w-100 myForm">
+            {% csrf_token %}
+            {{ form }}
+            <button type="submit">Upload</button>
+        </form>
+        <a href="{% url 'login-page' %}"><h5 class="text-center">Login Here</h5></a>
+    </div>
+
+{% endblock %}
+
+{% block logic %}
+    <script src="{% static 'advanced_to_do/js/reg.js' %}"></script>
+{% endblock %}

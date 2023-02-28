@@ -1,0 +1,50 @@
+.actionDiv {
+    box-sizing: border-box;
+    padding: 50px 20px;
+    width: 70%;
+    height: auto;
+    position: relative;
+    top: 25%;
+    left: 15%;
+    background-color: rgba(68, 82, 82, 0.849);
+    border-radius: 10px;
+    border: 2px solid wheat;
+}
+input {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid grey;
+    margin-bottom: 15px;
+}
+.saveButton {
+    border: none;
+    width: 200px;
+    padding: 10px;
+    color: white;
+    background-color: blue;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 15px;
+    margin-left: 15px;
+    border: 2px solid wheat;
+}
+.deleteButton {
+    display: inline-block;
+    width: 200px;
+    padding: 10px;
+    text-decoration: none;
+    color: white;
+    background-color: red;
+    font-weight: bold;
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 15px;
+    margin-right: 15px;
+    border: 2px solid wheat;
+}
+.saveButton:active, .deleteButton:active {
+    position: relative;
+    top: 2px;
+}

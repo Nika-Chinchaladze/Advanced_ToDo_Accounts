@@ -1,0 +1,51 @@
+.loginDiv, .registerDiv {
+    box-sizing: border-box;
+    padding: 15px;
+    width: 50%;
+    position: relative;
+    left: 25%;
+    background-color: rgba(68, 82, 82, 0.849);
+    border-radius: 10px;
+    border: 2px solid rgba(49, 15, 49, 0.815);
+}
+.loginDiv {
+    height: 60%;
+    top: 20%;
+}
+.registerDiv {
+    height: 87%;
+    top: 3%;
+}
+h2, h5 {
+    color: white;
+}
+a {
+    text-decoration: none;
+}
+.myForm input {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: none;
+    background-color: rgba(167, 165, 165, 0.822);
+    color: white;
+}
+input:focus{
+    outline: none;
+}
+::placeholder {
+    color: white;
+    opacity: 1;
+}
+.myForm button {
+    width: 70%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid rgba(19, 19, 49, 0.877);
+    background-color: rgba(61, 61, 233, 0.788);
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+}
